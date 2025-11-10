@@ -1,0 +1,162 @@
+@use '../abstracts' as *;
+.ar-earbuds {
+    padding: 40px 20px;
+    padding-top: 38px;
+    margin: 0;
+    background-color: $color-gray-light;
+    margin-top: -2px;
+}
+
+.model-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: start;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.model-wrapper {
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.hotspot-instruction {
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: $color-gray-dark;
+    font-style: italic;
+    margin-top: -1px;
+}
+
+model-viewer {
+    width: 100%;
+    height: 600px;
+    max-height: 80vh;
+    background-color: #1a1a2e;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin: 0;
+    margin-left: 0;
+}
+
+@media (max-width: 768px) {
+    .model-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    model-viewer {
+        height: 400px;
+    }
+    
+    .hotspot-info-panel {
+        order: -1;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .model-container {
+        grid-template-columns: 1.5fr 1fr;
+        gap: 20px;
+    }
+    
+    model-viewer {
+        height: 500px;
+    }
+}
+
+.Hotspot {
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.Hotspot:hover {
+    background: rgba(0, 0, 0, 0.6);
+    border-color: rgba(255, 255, 255, 0.9);
+}
+
+
+.progress-bar {
+    display: block;
+    width: 33%;
+    height: 10px;
+    max-width: 200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: 25px;
+    box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.5), 0px 0px 5px 1px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.progress-bar.hide {
+    visibility: hidden;
+    transition: visibility 0.3s;
+}
+
+.update-bar {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 0%;
+    height: 100%;
+    border-radius: 25px;
+    transition: width 0.3s;
+}
+
+.hotspot-info-panel {
+    position: sticky;
+    top: 20px;
+    margin-left: 2px;
+}
+
+.hotspot-info-panel__content {
+    background-color: $color-white;
+    border-radius: 8px;
+    padding: 25px;
+    padding-right: 23px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-height: 400px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    margin-top: -1px;
+}
+
+.hotspot-info-panel__content h3 {
+    font-size: 20px;
+    margin-bottom: 14px;
+    color: $color-primary;
+    margin-top: 2px;
+}
+
+.hotspot-info-panel__content img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    display: block;
+    margin-top: -2px;
+}
+
+.hotspot-info-panel__content p {
+    color: $color-gray-dark;
+    line-height: 1.6;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.hotspot-info-panel__content .default-message {
+    text-align: center;
+    color: $color-gray-dark;
+    padding: 40px 20px;
+    padding-top: 38px;
+    font-style: italic;
+}
