@@ -1,0 +1,46 @@
+@use '../abstracts' as *;
+.intro-section {
+    padding: 60px 20px;
+    background-color: $color-white;
+    text-align: center;
+    margin-top: -3px;
+}
+
+.intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.intro-content h1 {
+    font-size: 36px;
+    margin-bottom: 18px;
+    color: $color-primary;
+    margin-top: -2px;
+}
+
+.intro-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: $color-text;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .intro-section {
+        padding: 40px 20px;
+        margin-top: 0;
+    }
+    
+    .intro-content h1 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    
+    .intro-content p {
+        font-size: 14px;
+    }
+}
