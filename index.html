@@ -8,15 +8,23 @@
 </head>
 <body>
     <header id="header">
-        <nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span class="menu-toggle__line"></span>
+            <span class="menu-toggle__line"></span>
+            <span class="menu-toggle__line"></span>
+        </button>
+        <nav aria-label="Main navigation" id="mainNav">
             <ul>
-                <li><a href="#home">Claro</a></li>
+                <li><a href="#intro">Claro</a></li>
                 <li><a href="#intro">About</a></li>
                 <li><a href="#ar-model">3D Model</a></li>
+                <li><a href="#xray">X-Ray</a></li>
+                <li><a href="#animation">Animation</a></li>
             </ul>
         </nav>
     </header>
 
+    <main>
     <section class="intro-section" id="intro">
         <div class="intro-content">
             <h1>Claro Earbuds</h1>
@@ -45,7 +53,8 @@
                         data-position="0m 0.01m -0.04m" 
                         data-normal="0m 0m -1m" 
                         data-visibility-attribute="visible"
-                        onclick="showHotspotInfo('hotspot-1')">
+                        data-hotspot-id="hotspot-1"
+                        aria-label="Learn about Dynamic Audio Driver">
                     </button>
                     
                     <button class="Hotspot" 
@@ -53,7 +62,8 @@
                         data-position="0.02m 0.005m 0m" 
                         data-normal="1m 0m 0m" 
                         data-visibility-attribute="visible"
-                        onclick="showHotspotInfo('hotspot-2')">
+                        data-hotspot-id="hotspot-2"
+                        aria-label="Learn about Smart Touch Panel">
                     </button>
                     
                     <button class="Hotspot" 
@@ -61,7 +71,8 @@
                         data-position="-0.01m 0.015m -0.02m" 
                         data-normal="0m 0m -1m" 
                         data-visibility-attribute="visible"
-                        onclick="showHotspotInfo('hotspot-3')">
+                        data-hotspot-id="hotspot-3"
+                        aria-label="Learn about Adaptive Noise Control">
                     </button>
                     
                     <button class="Hotspot" 
@@ -69,7 +80,8 @@
                         data-position="0m -0.01m 0.02m" 
                         data-normal="0m 0m 1m" 
                         data-visibility-attribute="visible"
-                        onclick="showHotspotInfo('hotspot-4')">
+                        data-hotspot-id="hotspot-4"
+                        aria-label="Learn about Extended Power Cell">
                     </button>
                     
                     <div class="progress-bar hide" slot="progress-bar">
@@ -85,7 +97,35 @@
         </div>
     </section>
 
+    <section class="xray-section" id="xray">
+        <div class="xray-container">
+            <h2 class="xray-title">Explore Internal Components</h2>
+            <div class="xray-wrapper">
+                <div class="xray-comparison">
+                    <img src="images/earbuds-normal.png" alt="Claro Earbuds Normal View" class="xray-image-normal">
+                    <div class="xray-divisor" id="xrayDivisor"></div>
+                    <img src="images/earbuds-xray.png" alt="Claro Earbuds X-Ray View" class="xray-image-xray">
+                </div>
+                <input type="range" min="0" max="100" value="50" class="xray-slider" id="xraySlider" aria-label="Adjust X-ray view slider">
+            </div>
+        </div>
+    </section>
+
+    <section class="scroll-animation-section" id="animation">
+        <div class="animation-container">
+            <h2 class="animation-title">Experience the Journey</h2>
+            <div class="animation-sequence-wrapper">
+                <div class="sequence-container" id="sequenceContainer">
+                    <img src="animation/explode0000.jpg" alt="Earbuds animation frame" class="sequence-frame" id="sequenceFrame">
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
