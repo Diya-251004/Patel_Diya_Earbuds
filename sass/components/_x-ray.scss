@@ -1,0 +1,150 @@
+@use '../abstracts' as *;
+
+.xray-section {
+    padding: 60px 20px;
+    background-color: $color-white;
+    margin-top: -2px;
+    padding-top: 58px;
+}
+
+.xray-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.xray-title {
+    text-align: center;
+    font-size: 32px;
+    color: $color-primary;
+    margin-bottom: 35px;
+    margin-top: -1px;
+}
+
+.xray-wrapper {
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.xray-comparison {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 25px;
+}
+
+.xray-image-normal,
+.xray-image-xray {
+    width: 100%;
+    height: auto;
+    display: block;
+    user-select: none;
+}
+
+.xray-image-normal {
+    position: relative;
+    z-index: 1;
+}
+
+.xray-image-xray {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    clip-path: inset(0 50% 0 0);
+}
+
+.xray-divisor {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background-color: $color-primary;
+    z-index: 10;
+    cursor: ew-resize;
+    transform: translateX(-50%);
+}
+
+.xray-divisor::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: $color-primary;
+    border-radius: 50%;
+    border: 3px solid $color-white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.xray-slider {
+    width: 100%;
+    max-width: 800px;
+    height: 8px;
+    border-radius: 5px;
+    background: $color-gray-light;
+    outline: none;
+    margin: 0 auto;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: -1px;
+    cursor: pointer;
+}
+
+.xray-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: $color-primary;
+    cursor: pointer;
+    border: 3px solid $color-white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.xray-slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: $color-primary;
+    cursor: pointer;
+    border: 3px solid $color-white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .xray-section {
+        padding: 40px 15px;
+        padding-top: 38px;
+    }
+    
+    .xray-title {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+    
+    .xray-comparison {
+        border-radius: 8px;
+        margin-bottom: 18px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .xray-section {
+        padding: 50px 20px;
+    }
+    
+    .xray-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+}
+
